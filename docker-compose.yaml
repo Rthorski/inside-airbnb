@@ -230,27 +230,27 @@ services:
   #   ports:
   #     - "8080:80"
   #   networks:
-  #     - datagoods_network
+  #     - airbnb_network
 
   # backend:
   #   build:
   #     context: ./backend
   #   networks:
-  #     - datagoods_network
+  #     - airbnb_network
 
   # etl:
   #   build:
   #     context: ./etl
   #   networks:
-  #     - datagoods_network
+  #     - airbnb_network
 
   # api:
   #   build:
   #     context: ./api
   #   networks:
-  #     - datagoods_network
+  #     - airbnb_network
 
-  datagoods-db:
+  inside-airbnb-db:
     image: postgres
     restart: always
     environment:
