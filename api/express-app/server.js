@@ -1,7 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const citiesRoutes = require('./cities/routes');
 
 const app = express();
+
+app.use(cors({
+    origin: 'http://localhost:5173'
+  }));
 
 const port = 5001;
 

@@ -24,10 +24,29 @@ const getCitiesByNeighbourhood = (req, res) => {
     })
 }
 
+const getCountCities = (req, res) => {
+    const neighbourhood_group = req.params['neighbourhood_group'];
+    pool.query(queries.getCountCities, [neighbourhood_group], (error, results) => {
+        if (error) throw error;
+        res.status(200).json(results.rows);
+    })
+}
+
+const getCountAllCities = (req, res) => {
+    pool.query(queries.getCountAllCities, (error, results) => {
+        if (error) throw error;
+        res.status(200).json(results.rows);
+    })
+}
+
+
+
 
 
 module.exports = {
     getCities,
     getCitiesByNeighbourhoodGroup,
     getCitiesByNeighbourhood,
+    getCountCities,
+    getCountAllCities,
 };
