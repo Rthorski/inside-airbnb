@@ -3,7 +3,7 @@ import pendulum
 from pprint import pprint
 import sys
 import os
-from analytics.downloadFiles import settings
+from analytics.downloadFiles import getLinks
 from dotenv import dotenv_values
 
 
@@ -21,7 +21,7 @@ def dashboarding_inside_data():
 
     @task
     def download_files():
-        settings(env_path)
+        getLinks()
 
 
     download_files()
