@@ -22,5 +22,5 @@ def getLinks():
     listings = [link['href'] for link in links if "listings.csv" in link.text]
     listings = [link for link in listings if not ".gz" in link]
     test = listings[:2]
-    print(test)
+
 
